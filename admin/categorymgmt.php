@@ -18,7 +18,7 @@ if(isset($_POST['addcategory'])){
     $uploadlocation="../uploads/category/".$imgname;
     //moving the uploaded file into uploads directory
     //Preparing the sql statement
-    $sql = "INSERT INTO category(name, description, thumbimg, status)VALUES('$name', '$description', '$imgname', '$status')";
+    $sql = "INSERT INTO categories(name, description, thumbimg, status)VALUES('$name', '$description', '$imgname', '$status')";
     //making connection
     include_once("../connection.php");
     //executing query

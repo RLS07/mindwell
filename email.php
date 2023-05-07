@@ -12,5 +12,6 @@ if (mail("lalpower77@gmail.com","Hi from local host","Hello <b>Rojan</b>, You ar
     echo"Email sent";
 }else{
     echo"Unable to send the MAIL.";
+    
 }
 ?>

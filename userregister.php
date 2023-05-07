@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,16 +23,15 @@
         //executing query
         $qry=mysqli_query($conn, $sql) or die(mysqli_error($conn));
         if($qry){
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
             // More headers
-            $headers .= 'From: <lalpower77@gmail.com>' . "\r\n";
+            $from="mindwell@socialmediasathi.com";
+            $headers = 'From:' . $from;
   
 
             $message = "Thank you for registration with us <b>Hi ".$user."</b> , Thank you for registration with us. Please clcik below link to verify your account. ";
 
-            $message.="<a href=localhost/webclass/verify.php?username=$user&email=$email>Verify</a>";
+            $message.="HELLO";
             $subject= "Thank you for registration with us";
 
             if(mail($email, $subject,  $message, $headers)){
@@ -40,6 +41,7 @@
                 echo "Unable to send the email";
             }
             echo "Data Inserted Successfully";
+            
         }
     }
     ?>
