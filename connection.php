@@ -1,5 +1,5 @@
 <?php
-$host="localhost:3308";
+$host="localhost";
 $dbuser="root";
 $dbpass="";
 $dbname="mindwell";

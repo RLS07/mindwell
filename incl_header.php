@@ -39,17 +39,37 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><?php echo"Welcome "; if(isset($_SESSION["username"])){
-        echo$_SESSION["username"];}?></a>
+          <a class="nav-link" href="#"><?php if(isset($_SESSION["username"])){
+        echo "Welcome, ".$_SESSION["username"];}?></a>
         </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <button class="btn btn-danger ms-2">
-<a class="nav-link" aria-current="page" href="admin/logout.php">Logout</a>
-          </button>
+      
+        <?php
+        if(isset($_SESSION["username"])){
+          echo"<button class='btn btn-danger ms-2'><a class='nav-link' aria-current='page' href='admin/logout.php'>Logout</a></button>
+          ";
+        }
+
+        ?>
+        <?php
+        if(!isset($_SESSION["username"])){
+          echo"<button class='btn btn-success ms-2'><a class='nav-link' aria-current='page' href='login.php'>Login!</a></button>
+          ";
+        }
+
+        ?>
+        <?php
+        if(!isset($_SESSION["username"])){
+          echo"<button class='btn btn-warning ms-2'><a class='nav-link' aria-current='page' href='userregister.php'>Register NOW !</a></button>
+          ";
+        }
+
+        ?>
+          
     </div>
   </div>
 </nav>
